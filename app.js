@@ -16,6 +16,13 @@ io.on("connection", function (socket) {
     io.emit("message", { message, name, id: socket.id });
   });
 
+  socket.on("typing", function () {
+    let index = userids.indexOf(socket.id);
+    let name = usernames[index];
+
+    socket.broadcast.emit("typing", { name });
+  });
+
   socket.on("nameset", function (namevalue) {
     userids.push(socket.id);
     usernames.push(namevalue);
@@ -23,6 +30,15 @@ io.on("connection", function (socket) {
     io.emit("numberofusers", usernames.length);
 
     socket.emit("namesetdone");
+  });
+
+  socket.on("disconnect", function () {
+    let index = userids.indexOf(socket.id);
+    if (index !== -1) {
+      userids.splice(index, 1);
+      usernames.splice(index, 1);
+      io.emit("numberofusers", usernames.length);
+    }
   });
 });
 
