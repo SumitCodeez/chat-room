@@ -83,3 +83,10 @@ setbtn.addEventListener("click", function (e) {
     socket.emit("nameset", nameinput.value.trim());
   }
 });
+
+$(document).ready(function () {
+  $(".myText").emojioneArea({
+    pickerPosition: "bottom",
+    tonesStyle: "bullet",
+  });
+});

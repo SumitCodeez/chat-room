@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chatroom</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/styles/emojionearea.css" />
   </head>
   <body class="bg-gray-100">
     <div
@@ -53,7 +54,7 @@
         <div class="relative flex">
           <textarea
             placeholder="Type your message"
-            class="resize-none overflow-hidden input w-full px-5 py-3 rounded-full border-2 focus:outline-none focus:border-blue-500 pt-4"
+            class="myText resize-none overflow-hidden input w-full px-5 py-3 rounded-full border-2 focus:outline-none focus:border-blue-500 pt-4"
           ></textarea>
           <button
             class="absolute send right-0 top-1/2 -translate-y-1/2 mr-5 bg-blue-500 text-white py-1 px-4 rounded-full hover:bg-blue-600"
@@ -68,6 +69,12 @@
       integrity="sha384-2huaZvOR9iDzHqslqwpR87isEmrfxqyWOF7hr7BY6KG0+hVKLoEXMPUJw3ynWuhO"
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/javascripts/emojionearea.js"></script>
     <script src="/javascripts/script.js"></script>
   </body>
 </html>
